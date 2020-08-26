@@ -50,7 +50,7 @@ RStudio is an integrated development environment (IDE). RStudio makes it easier 
 By default, RStudio displays four panes shown below:
 
 ```{r, echo=F, out.width="400px"}
-knitr::include_graphics("lab01-rstudio-panes.png")
+knitr::include_graphics("lab01-rstudio-panes.PNG")
 ```
 
 Today, you will complete the exercises below to become familiar with the four panes.
@@ -75,7 +75,7 @@ In the R markdown files you are given, we will often provide code chunks, these 
 
 - **Exercise 3:** In the code chunk below, use the assignment operator (`<-`) to store your answer in an object called `monthly_wage`. When assigning variables, the stuff on the right-hand side of the arrow `<-` is evaluated first, and then assigned to the object specified by the variable name on the left of the arrow.
 ```{r monthly-wage}
-monthly_wage <- "YOUR CODE HERE"
+monthly_wage <- 5
 ```
 
 You can also save a series of numbers in an object.  For example: `heights <- c(5,6,2,9,6)`
@@ -133,7 +133,7 @@ This shows you all the packages and their functions which discuss histograms. Fo
 - **Exercise 4:** Create your first script. Click File > New File > R Markdown. Name the file "PracticeScript". A new file will open with an **R Markdown** template. Notice that the "title" shown on line 1 is what you named your file. **R Markdown** lets you weave together plain text (sentences for human consumption) and code (sentences for computer consumption). The code is embedded in **R code chunks** beginning and ending with a set of three back ticks (```). The beginning set of ticks also includes an "r" to denote that we are providing R code and an optional title that is used to describe the contents of the code chunk. After the comma we can include optional **chunk options** that we will discuss later. The image below shows the first 19 lines of code of the default-generated R Markdown file and describes the code chunks:
 
 ```{r code-chunk-description, echo = F, out.width="400px"}
-knitr::include_graphics("lab01-source-code-chunk-description2.png")
+knitr::include_graphics("lab01-source-code-chunk-description2.PNG")
 ```
 
 - **Exercise 5:** Read the text in the practice script you created. Click the button labeled **Knit**. Save the file name as "PracticeScript". Compare the file that is generated when you hit "Knit" (it should open in a pop-up window) with the script shown in the code editor. 
@@ -188,7 +188,7 @@ Now, let's try solving a problem. In your assignments, you will be given a promp
 
 ```{r five, eval = FALSE}
 # Your answer must be stored in the object p1
-p1 <- "<<<<YOUR CODE HERE>>>>"
+p1 <- 5
 
 check_problem1()
 ```
@@ -197,7 +197,7 @@ As you work on the problem, replace the text `"<<<<YOUR CODE HERE>>>>"` with you
 
 ```{r five-try}
 # Replace the text below with your answer. (try p1 <- 2 + 3)
-p1 <- "<<<<YOUR CODE HERE>>>>"
+p1 <- 2 + 3
 
 check_problem1()
 ```
