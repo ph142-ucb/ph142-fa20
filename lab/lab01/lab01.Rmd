@@ -75,7 +75,9 @@ In the R markdown files you are given, we will often provide code chunks, these 
 
 - **Exercise 3:** In the code chunk below, use the assignment operator (`<-`) to store your answer in an object called `monthly_wage`. When assigning variables, the stuff on the right-hand side of the arrow `<-` is evaluated first, and then assigned to the object specified by the variable name on the left of the arrow.
 ```{r monthly-wage}
-monthly_wage <- 5
+monthly_wage <- 100
+
+heights <- c(5, 6, 2, 9, 6)
 ```
 
 You can also save a series of numbers in an object.  For example: `heights <- c(5,6,2,9,6)`
@@ -222,7 +224,7 @@ You'll also run into problems that will ask you to explain your answer in a coup
 
 **Problem 4: What are you looking forward to most in this course?**
 
-[TODO: YOUR ANSWER HERE]
+Working with PH 142 students to help them learn to the best of their ability!
 
 
 
