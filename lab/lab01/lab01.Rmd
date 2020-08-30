@@ -188,7 +188,7 @@ Now, let's try solving a problem. In your assignments, you will be given a promp
 
 ```{r five, eval = FALSE}
 # Your answer must be stored in the object p1
-p1 <- "<<<<YOUR CODE HERE>>>>"
+p1 <- yes
 
 check_problem1()
 ```
