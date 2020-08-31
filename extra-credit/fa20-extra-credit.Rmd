@@ -1,0 +1,62 @@
+---
+title: "PH 142 Fall 20 Extra Credit"
+author: "Your name here" 
+output: pdf_document
+---
+
+## Assignment: Create a Question and Solution Guide
+
+You will be randomly assigned to two weeks in the course. For extra credit and to show your creativity, you can make a sample question and solution guide corresponding to topics covered during lecture or lab in your assigned week.
+
+## Due Date
+Your sample questions will be due on Gradescope on the Friday of the week following your assigned week at 11:59 pm PST. For example, if you were assigned questions from week 3 (beginning Sept 7), then you can submit your questions on Gradescope anytime until Sept 18 at 11:59 pm PST.
+
+## Guidelines
+- Write one long question worth 5-7 marks, or several questions worth 1-2 marks each for a total of 5-7 marks. The format can be short answer, fill in the blanks, true or false, and/or multiple choice.
+- Be inspired and creative! Try and apply what you learned that week to a topic in the news or a public health example that we didn’t cover that week in class.
+- Create a solution guide for your question, indicating where the marks will be earned or deducted.
+- If you want, you can provide a small dataset printed on the sheet you submit.
+
+## Extra Credit Points
+- You will have the opportunity to submit two questions through the term, each worth 1 bonus percentage point.
+- Full marks will be awarded for creative questions with thorough solution guides that have public health or biology applications
+- Half marks will be awarded for questions less applicable to public health or biology
+- No marks will be awarded if the guidelines are not followed
+
+## Additional Notes
+
+- If you have not received an email titled "[PH 142] Extra Credit Assignment", please post on Piazza as soon as possible.
+- A template has been provided for you on the next page. Please make sure to indicate the "Type," "Coding," "Chapter," and "Topic" of your question.
+
+## Submission
+
+- There are two assignments on Gradescope labeled "Extra Credit #1" and "Extra Credit #2"; please submit your first assigned week's question(s) to "Extra Credit 1" and your second assigned week's question(s) to "Extra Credit #2"
+- Once you're ready to submit, knit your Rmd as a pdf and make sure it's neat, with no code extending further than the page.
+- On the lower-right window in the 'Files' tab, check the 'fa20-extra-credit.pdf' file; then click on 'More,' then 'Export.' This will download the pdf to your computer.
+- Log into Gradescope and select the correct assignment. Upload the pdf manually.
+- If you have any questions, feel free to post on Piazza.
+
+\newpage
+
+## Question 
+*Write your question here. (X points)*
+
+## Solution
+*Write your solution here, complete with an explanation as to why your answer is correct.*
+
+## Grading Rubric
+*Note how points are earned or deducted.*  
+
+*E.g. +1 for summarize() or summarise()*
+
+*+1 for using correct dataset 'sample_data_set'*
+
+
+
+**Type**: One of: Multiple Choice, T/F, fill in the blank, short answer
+
+**Coding**: Write true or false, indicating if this question is about R coding
+
+**Chapter**: List the relevant chapter number or “N/A” if not applicable.
+
+**Topic**: Few words on the relevant topic 
