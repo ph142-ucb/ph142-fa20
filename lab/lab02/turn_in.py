@@ -151,6 +151,8 @@ if __name__ == '__main__':
     # client.upload_pdf_submission(1234, 5678, 'student@example.edu', 'submission.pdf')
 
     try:
+        if FRQ_ASSIGNMENT_ID in globals() and FRQ_ASSIGNMENT_ID is not None:
+            client.upload_pdf_submission(COURSE_ID, FRQ_ASSIGNMENT_ID, email, FRQ_PATH)
     except NameError:
         pass
 
