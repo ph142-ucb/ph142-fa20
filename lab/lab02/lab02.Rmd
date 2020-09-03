@@ -28,7 +28,7 @@ Republic.^1^
 Over the course of this lab and the first assignment, we will study the relationship 
 between countries' cesarean delivery rates and their gross domestic products (GDPs).^2,3^ 
 
-In today's lab we will:
+In today's lab we will:mn 
 
 - import the data,
 - familiarize ourselves with the dataset, 
@@ -48,7 +48,7 @@ toggle `message = TRUE` to `message = FALSE` in the code chunk options. Re-knit 
 and notice the different in the output:
 
 ```{r load-libraries, message = TRUE}
-library(readr)
+#library(readr)
 library(dplyr)
 library(ggplot2)
 ```
@@ -106,39 +106,39 @@ In four separate code chunks, type `str(CS_data_raw)`, `dim(CS_data_raw)`,
 `names(CS_data_raw)`, and `head(CS_data_raw)`. Execute each code chunk and study the output.
 
 ```{r keep-exploring-the-data-1}
-# <<<<YOUR CODE HERE>>>>
+str(CS_data_raw)
 
 ```
 
 ```{r keep-exploring-the-data-2}
-# <<<<YOUR CODE HERE>>>>
+dim(CS_data_raw)
 
 ```
 
 ```{r keep-exploring-the-data-3}
-# <<<<YOUR CODE HERE>>>>
+names(CS_data_raw)
 
 ```
 
 ```{r keep-exploring-the-data-4}
-# <<<<YOUR CODE HERE>>>>
+head(CS_data_raw)
 
 ```
 
 **In your own words, what do these functions do:**
 
-- `dim()`: [ TODO: YOUR ANSWER HERE ] 
+- `dim()`: Provides the dimensions of our dataset; first number correlates to the number of rows, and the second number correlates to the number of columns/variables.
 
-- `str()`: [ TODO: YOUR ANSWER HERE ]
+- `str()`: Returns information about the dataset, including the variables and the types (char, num), and also provides a few examples within the dataset.
 
-- `names()`: [ TODO: YOUR ANSWER HERE ]
+- `names()`: Returns the names of the variable in our dataset.
 
-- `head()`: [ TODO: YOUR ANSWER HERE ]
+- `head()`: Returns the first 6 rows of our dataset.
 
 **Based on these functions' outputs, who/what are the individuals in this 
 dataset? How many of them are there?**
 
-[ TODO: YOUR ANSWER HERE ]
+The individuals in our dataset are the countries, and there are 137 countries listed.
 
 \newpage 
 
@@ -151,7 +151,7 @@ to the dataset that takes this desired format. Write one line of code to add thi
 variable to the dataset and assign this to the new object `CS_data`:**
 
 ```{r add-new-variable}
-CS_data <- "<<<<YOUR CODE HERE>>>>"
+CS_data <- mutate(CS_data_raw, CS_rate_100 = CS_rate * 100)
 
 check_problem1()
 ```
@@ -160,9 +160,9 @@ check_problem1()
 
 **These countries represent a wide range of income and geographic regions.**
 
-**Which variable groups the countries by income regions?** [ TODO: YOUR ANSWER HERE ]
+**Which variable groups the countries by income regions?** Income_group
 
-**Which variable groups the countries by geographic regions?** [ TODO: YOUR ANSWER HERE ]
+**Which variable groups the countries by geographic regions?** Region
 
 
 These variables are categorical variables. So far in lecture, we've seen categorical variables stored as `chr` variables when we've examined `str(data)`. Here however, `Income_Group_order` is stored as a `Factor` variable, which is another way to store categorical data. One benefit of storing it as `Factor` is that we can re-order the `Factor` variable in a way that makes sense for plotting and later analysis. To see the values and order of a factor variable, we can use the following code.
@@ -171,7 +171,7 @@ These variables are categorical variables. So far in lecture, we've seen categor
 
 ## STOP: Remove eval = F from this chunk header before continuing on.
 
-```{r levels-income, eval = F}
+```{r levels-income}
 CS_data %>% pull(Income_Group_order) %>% levels
 # You won't be tested on writing the line of code above. 
 # Try and gain an understanding of what it is showing you
@@ -183,7 +183,8 @@ their distributions. Using the `ggplot()` code you learnt during lecture, make a
 bar chart showing the number of countries per income group using `Income_Group`.**
 
 ```{r bar-chart-income}
-p2 <- "<<<<YOUR CODE HERE>>>>"
+p2 <- ggplot(CS_data, aes(x = Income_Group)) +
+  geom_bar()
 p2
 
 check_problem2()
@@ -194,7 +195,8 @@ check_problem2()
 **3. Now, make the plot using `Income_Group_order`.**
 
 ```{r bar-chart-income-order}
-p3 <- "<<<<YOUR CODE HERE>>>>"
+p3 <- ggplot(CS_data, aes(x = Income_Group_order)) +
+  geom_bar()
 p3
 
 check_problem3()
@@ -202,12 +204,13 @@ check_problem3()
 
 **Do you prefer the plot using `Income_Group` or `Income_Group_order`? Why?**
 
-[ TODO: YOUR ANSWER HERE ]
+Income_Group_order is preferred because it orders our income groups in a way that makes the most sense to us.
 
 
 **Did you use the argument `stat="identity"` in the code to make this bar chart? Why or why not?**
 
-[ TODO: YOUR ANSWER HERE ]
+We did not; we do not have a separate variable that relates to the percentages. Instead, we relied on the counts of each of the categories in 'Income_Group_order.'
+
 
 
 \newpage 
@@ -215,7 +218,8 @@ check_problem3()
 **4. Make a bar chart showing the number of countries per geographic region.**
 
 ```{r bar-chart-region, fig.width = 11}
-p4 <- "<<<<YOUR CODE HERE"
+p4 <- ggplot(CS_data, aes(x = Region)) +
+  geom_bar() 
 p4
 
 check_problem4()
@@ -223,12 +227,12 @@ check_problem4()
 
 **Based on your plot, which world region has the most countries in the data set?**
 
-[ TODO: YOUR ANSWER HERE ]
+Eurpoe & Central Asia
 
 
 **Which geographic region had the fewest number of countries in the data set**
 
-[ TODO: YOUR ANSWER HERE ]
+North America
 
 
 **Note that the above code chunk had the chunk option "fig.width = 11". Try changing the
@@ -245,7 +249,8 @@ outputs when running your code. It is telling you that by default the data is
 grouped into 30 bins for plotting.**
 
 ```{r histogram-GDP-2006}
-p5 <- "<<<<YOUR CODE HERE>>>>"
+p5 <- ggplot(CS_data, aes(x = GDP_2006)) +
+  geom_histogram()
 p5
 
 check_problem5()
@@ -261,7 +266,8 @@ choose a bin width in the 1000s. Thus, the range of the variable matters when
 choosing a good bin width.** 
 
 ```{r histogram-GDP-2006-binwidth}
-p6 <- "<<<<YOUR CODE HERE>>>>"
+p6 <- ggplot(CS_data, aes(x = GDP_2006)) +
+  geom_histogram(binwidth = 10000)
 p6
 
 check_problem6()
@@ -274,7 +280,8 @@ check_problem6()
 binwidth argument to choose the size.** 
 
 ```{r histogram-CS}
-p7 <- "<<<<YOUR CODE HERE>>>>"
+p7 <- ggplot(CS_data, aes(x = CS_rate_100)) +
+  geom_histogram(binwidth = 5)
 p7
 
 check_problem7()
@@ -294,7 +301,9 @@ will change the color to a pinky-purple.**
 **8. Below present your final plots with updated titles, labels, colors, and fills.To do this, extend the ggplot code you wrote above with the functions and arguments just described:**
 
 ```{r your-final-plots}
-p8 <- "<<<<YOUR CODE HERE>>>>"
+p8 <- ggplot(CS_data, aes(x = CS_rate_100)) +
+  geom_histogram(binwidth = 5, col = "white", fill = "darksalmon") +
+  labs(y = "Count of Countries", x = "Cesarean delivery rate (%)", title = "Distribution of cesarean delivery rates across countries")
 p8
 
 check_problem8()
@@ -320,7 +329,7 @@ attempts in the code chunk below. Don't worry about producing an error or saving
 plot in the wrong place -- that is all part of coding and learning new functions.**
 
 ```{r saving-plot}
-# <<<<YOUR CODE HERE>>>>
+ggsave("hist-cs.png", plot = p8, device = "png", width = 8, height = 5, units = "in")
 
 ```
 
