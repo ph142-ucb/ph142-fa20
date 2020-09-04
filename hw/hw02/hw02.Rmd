@@ -35,7 +35,6 @@ the return or enter key so that the code runs onto the next line.
 
 \newpage
 
---------------------------------------------------------------------------------
 
 # Summarizing global cesarean delivery rates and GDP across 137 countries
 
