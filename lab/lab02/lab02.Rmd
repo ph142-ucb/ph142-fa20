@@ -50,6 +50,7 @@ and notice the different in the output:
 ```{r load-libraries, message = TRUE}
 #library(readr)
 library(dplyr)
+library(readr)
 library(ggplot2)
 ```
 
