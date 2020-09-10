@@ -1,7 +1,7 @@
 ---
 title: "Lab 3: Relationship between global cesarean delivery rates and GDP"
-author: "Your name and student ID"
-date: "today's date"
+author: "Chandler B. 303..."
+date: "September 9, 2020"
 output: pdf_document
 ---
 
@@ -49,7 +49,8 @@ CS_data <- CS_data %>% mutate(CS_rate_100 = CS_rate*100)
 **1. [1 point] Make a scatter plot between `CS_rate_100` and `GDP_2006`:**
 
 ```{r scatterplot}
-p1 <- "<<<<YOUR CODE HERE>>>>"
+p1 <- ggplot(CS_data, aes(x = GDP_2006, y = CS_rate_100)) +
+  geom_point()
 p1
 
 
@@ -68,7 +69,7 @@ spread out the range of data at the lowest levels.
 `CS_data` and assign this new data set to `CS_data_log`. Call the variables `log_CS` and `log_GDP`. Use base e, also known as natural logarithms, to create the logged variables:**
 
 ```{r create-logged variables}
-CS_data_log <- "<<<<YOUR CODE HERE>>>>"
+CS_data_log <- CS_data %>% mutate(log_CS = log(CS_rate_100), log_GDP = log(GDP_2006))
 
 
 check_problem2()
@@ -78,7 +79,8 @@ check_problem2()
 **3. [1 point] Remake the scatter plot using the logged variables**:
 
 ```{r scatter-logged}
-p3 <- "<<<<YOUR CODE HERE>>>>"
+p3 <- ggplot(CS_data_log, aes(x = log_GDP, y = log_CS)) +
+  geom_point()
 p3
 
 
@@ -89,7 +91,9 @@ check_problem3()
 **4. [1 point]  A `geom` that you have not yet learnt is `geom_smooth()`. This geom can fit 
 a curve to the data. Extend your `ggplot()` code by adding geom_smooth() to it:**
 ```{r add-smoothed-curve}
-p4 <- "<<<<YOUR CODE HERE>>>>"
+p4 <- ggplot(CS_data_log, aes(x = log_GDP, y = log_CS)) +
+  geom_point() +
+  geom_smooth()
 p4
 
 check_problem4()
@@ -97,7 +101,7 @@ check_problem4()
 
 **Does the relationship between logged GDP and logged CS look linear?**
 
-[TODO: YOUR ANSWER HERE]
+The relationship between logged GDP and logged CS is linear for the first 60% of our data. The points start to plateau after a log_GDP of 8.
 
 
 \newpage 
@@ -106,7 +110,10 @@ check_problem4()
 `Income_Group`.**
 
 ```{r color-points-by-income-group}
-p5 <- "<<<<YOUR CODE HERE>>>>"
+p5 <- ggplot(CS_data_log, aes(x = log_GDP, y = log_CS)) +
+  geom_point(aes(col = Income_Group)) +
+  geom_abline(slope = 0.457, intercept = -1.412) +
+  geom_smooth()
 p5
 
 check_problem5()
@@ -116,12 +123,19 @@ check_problem5()
 for those countries that are not categorized as one of the two high income
 categories.**
 
+```{r}
+lm(log_CS ~ log_GDP, CS_data_log)
+```
+
+
 \newpage
 
 **6. [1 point] For this lab, we would like to use linear regression. To do this, use a `dplyr` function to make a new data set called `CS_data_sub` that only contains the low-, lower-middle, and upper-middle income countries (hint: You might want to look at the data to see exactly what these levels are called in the data set):**
 
 ```{r subset-low-mid-income}
-CS_data_sub <- "<<<<YOUR CODE HERE>>>>"
+CS_data_sub <- CS_data_log %>% filter(Income_Group %in% c("Low income", "Lower middle income", "Upper middle income"))
+
+#CS_data_sub <- CS_data_log %>% filter(!(Income_Group %in% c("High income: nonOECD", "High income: OECD")))
 
 
 check_problem6()
@@ -133,7 +147,9 @@ check_problem6()
 relationship looks approximately linear between the logged variables:**
 
 ```{r scatter-low-mid}
-p7 <- "<<<<YOUR CODE HERE>>>>"
+p7 <- ggplot(CS_data_sub, aes(x = log_GDP, y = log_CS)) +
+  geom_point(aes(col = Income_Group)) +
+  geom_smooth()
 p7
 
 
@@ -145,25 +161,40 @@ model the relationship between `log_CS` as the response variable and `log_GDP`
 as the explanatory variable. Don't forget to specify the correct data set!:**
 
 ```{r linear-model}
-p8 <- "<<<<YOUR CODE HERE>>>>"
-p8
+p8 <- lm(formula = log_CS ~ log_GDP, data = CS_data_sub)
+tidy(p8)
 
 check_problem8()
 ```
 
 **9.Interpret the slope estimate:**
 
-[TODO: YOUR ANSWER HERE]
+A one unit increase in the natural log of GDP is associated with a 0.82 unit increase in the natural log of the cesarean delivery rate.
 
 
 **10.Estimate what the cesarean delivery rate would be for a country with a GDP of 2000. Outline the steps you take to calculate your answer and provide an interpretation. Round your final answer to one decimal place.**
 
-[TODO: YOUR ANSWER HERE]
+We first need to convert the GDP onto the log (base $e$) scale. We can use the 'log()' function in R to take the logarithm of 2000 using base $e$. To use base 10, we can use the log10() function instead.
+
+logCS = logGDP * slope + Intercept
+
+* Step 1: Take the natrual log of GDP of 2000: log(2000) = 7.600902
+* Step 2: Plug the logged GDP into the line of best fit formula:
+    - logCS = logGDP * slope + Intercept
+    - logCS = 7.600902 * slope + Intercept
+    - logCS = 7.600902 * (0.819335) - 3.9404856
+    - logCS = 2.287199
+* Step 3: Exponentiate both sides of the equation to get back to the cesarean delivery rate.
+    - exp(logCS) = exp(2.287199)
+    - CS_rate = 9.847317% = 9.8%
+
+Interpretation: A country with a GDP of 2000 is expected to have a cesarean delivery rate of 9.8%
+
 
 
 **11. Is it appropriate to use the model to predict the cesarean delivery rate for a country with a GDP of 50,000? Why or why not? Based on the relationship in the full data set, would you expect the linear model to over or under predict?**
 
-[TODO: YOUR ANSWER HERE]
+A GDP of 50,000 corresponds to a logged GDP of 10.82. This value is outside of the range of our data that was used for the linear model. Because of this, we should NOT use the model to make this prediction because then we would be extrapolating data. If we did use the model, it would likely over-predict the country's cesarean delivery rate because the relationship between GDP and cesarean delivery rate is less steep for high income countries (more accurately, it plateaus after a log_GDP of around 8).
 
 
 \newpage
