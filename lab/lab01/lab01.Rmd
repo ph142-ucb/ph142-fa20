@@ -197,7 +197,7 @@ As you work on the problem, replace the text `"<<<<YOUR CODE HERE>>>>"` with you
 
 ```{r five-try}
 # Replace the text below with your answer. (try p1 <- 2 + 3)
-p1 <- "<<<<YOUR CODE HERE>>>>"
+p1 <- 2 + 3
 
 check_problem1()
 ```
@@ -222,8 +222,7 @@ You'll also run into problems that will ask you to explain your answer in a coup
 
 **Problem 4: What are you looking forward to most in this course?**
 
-[TODO: YOUR ANSWER HERE]
-
+To fixing this dumb bug... hopefully this will work... also hello to everyone who noticed these changes!
 
 
 Now, at the end of the assignment, there will be a chunk for you to check your progress/final score before submitting. Run the chunk below to see what that looks like. Since we got p1 correct, and p2 and p3 incorrect, we should expect to see that reflected. You'll also see the possible number of points per question. Unfortunately, our tech in this course isn't good enough (yet!) to autograde free-response questions, so you'll see in the score report that these are **NOT YET GRADED** and will be graded later by your GSIs. 
