@@ -2,7 +2,7 @@
 title: "Chapter 9: Essential Probability Rules"
 author: "Corinne Riddell"
 date: "September 23, 2020"
-output: slidy_presentation
+output: pdf_document
 ---
 
 ### Learning objectives for today
@@ -77,7 +77,12 @@ d) Between 75.0% - 100%
 
 Many people choose d), but the true answer is a)! Why do we get this so wrong?
 
-Video link (2 mins): [click here](https://www.youtube.com/watch?v=nuSqWRuz-mU&feature=youtu.be) 
+Video link (2 mins): [click here](https://youtu.be/HHWNO4KgcKw) (need to be in you Berkeley account for the link to work) 
+
+```{r, include = F}
+#old video link: https://www.youtube.com/watch?v=nuSqWRuz-mU&feature=youtu.be
+```
+
 
 ### Example 3: Algorithms can be biased and discriminatory
 
