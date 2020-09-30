@@ -5,4 +5,4 @@ README Lab 5
 
 "Young fry of treachery!"
 
--MacBeth, Act 4, Scene 2, Line 76
+-Macbeth, Act 4, Scene 2, Line 76
