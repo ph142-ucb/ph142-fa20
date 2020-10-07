@@ -2,7 +2,7 @@
 title: 'Chapter 12: The Poisson distribution'
 author: "Corinne Riddell"
 date: "October 7, 2020"
-output: pdf_document
+output: word_document
 ---
 
 ### Learning objectives for today
@@ -84,7 +84,6 @@ $$P(X=k)={\frac{e^{-\mu} \mu^k}{k!} }$$
 
 ```
 
-
 ### Mean and standard deviation (SD) of a Poisson random variable
 
 - The mean of a Poisson random variable is equal to $\mu$. 
@@ -93,7 +92,7 @@ $$P(X=k)={\frac{e^{-\mu} \mu^k}{k!} }$$
 probability distribution. 
 - Poisson distributions are most commonly used to describe rare, random events
 (or random events examined over small time intervals).
-- In R, the function to calculate $P(X=x)$ for a binomial `dpois(x=?, lambda=?)`,
+- In R, the function to calculate $P(X=x)$ is `dpois(x=?, lambda=?)`,
 where `lambda` ($\lambda$) is equal to the average $\mu$ (which is the book's notation).
 
 ### Probability distribution of a Poisson random variable
@@ -189,9 +188,9 @@ time.
 
 * `ppois(q = a lambda = 0.1)` is the probability of `a` events **or less**. Thus `ppois` returns a cumulative probability of the lower tail by default.
 
-* `dpois(q = a lambda = 0.1)` is the probability of **exactly** `a` events. 
+* `dpois(x = a lambda = 0.1)` is the probability of **exactly** `a` events. 
 
-So to calculate the probability of 1 events or less we could use ppois() like this:
+So to calculate the probability of 1 event or less we could use `ppois()` like this:
 ```{r}
 ppois(q = 1, lambda = 0.1) # notice that lambda is the parameter
 ```
