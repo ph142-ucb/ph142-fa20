@@ -2,7 +2,7 @@
 title: "Chapter 13: Sampling Distributions"
 author: "Corinne Riddell"
 date: "October 12, 2020"
-output: word_document
+output: slidy_presentation
 ---
 
 ### Learning objectives for today
@@ -368,10 +368,13 @@ population proportion $p$ of successes. Let $\hat{p}$ be the sample proportion
 of successes. Then:
 
 $$\hat{p}=\frac{\text{count of successes in the sample}}{n}$$
+
 - The mean of the sampling distribution of $\hat{p}$ is $p$, the population parameter
+
 - The standard deviation of the sampling distribution of $\hat{p}$ is $\sqrt{\frac{p(1-p)}{n}}$
-- As the sample size increases, the sampling distribution of $\hat{p}$ becomes
-approximately Normal. This is the **Central Limit Theorem** for a proportion!
+
+- As the sample size increases, the sampling distribution of $\hat{p}$ becomes approximately Normal. This is the **Central Limit Theorem** for a proportion!
+
 - For this to apply, we require:
     - the population is at least 20 times as large as the sample
     - both np and n(1-p) are larger than 10.
