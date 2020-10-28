@@ -150,7 +150,8 @@ library(dplyr)
 
 
 
-```{r}
+##Remove eval = F from the chunk header before moving on!
+```{r, eval = F}
 our_sheet <- my_key %>%
   gs_key(lookup = FALSE) %>% 
   gs_read(range = "A1:D100")
@@ -173,9 +174,13 @@ our_sheet <- my_key %>%
 
 Here is the code to make the dumbbell chart. You will need to change `our_sheet` to the name of your saved dataset (if you changed the name).
 
-```{r make-dumbell-chart}
+
+##Remove eval = F from the chunk header before moving on!
+```{r make-dumbell-chart, eval = F}
 # This code is provided to students because it is a bit advanced.
 # You are not expected to know how to make this plot yourself!
+
+
 ggplot(data = our_sheet, aes(x = Dominant_num_dots_hit, y = Student_name)) +
   geom_segment(aes(xend = Non_dominant_num_dots_hit, yend = Student_name)) + 
   geom_point(aes(col = "Dominant")) +
