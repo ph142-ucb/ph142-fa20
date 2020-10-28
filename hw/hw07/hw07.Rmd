@@ -11,7 +11,7 @@ library(dplyr)
 library(ggplot2)
 ```
 
-* Solutions released date: Tuesday, October 27
+* Solutions released date: Tuesday, November 3.
 
 ```{r setup, include = FALSE}
 # Don't change these lines, just run them!
