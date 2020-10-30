@@ -2,7 +2,7 @@
 title: "Chapter 15: Inference in Practice"
 author: "Corinne Riddell"
 date: "October 19, 2020"
-output: word_document
+output: slidy_presentation
 ---
 
 ### Learning objectives
@@ -204,12 +204,12 @@ $$n=\Big(\frac{z^*\sigma}{moe}\Big)^2$$
 
 ### Example of calculation sample size
 
-Body temperature has a known $\sigma=0.06$ degrees F. We want to estimate the mean
+Body temperature has a known $\sigma=0.6$ degrees F. We want to estimate the mean
 body temperature $\mu$ for healthy adults within $\pm0.05$ F with 95% confidence. 
 How many healthy adults must we measure?
 
 $$n=\Big(\frac{z^*\sigma}{moe}\Big)^2$$
-$$n=\Big(\frac{1.96\times 0.06}{0.05}\Big)^2 = 553.2$$
+$$n=\Big(\frac{1.96\times 0.6}{0.05}\Big)^2 = 553.2$$
 
 * We must recruit 554 healthy adults for this study.
 * Note that we always round up when calculating sample size, because if we rounded
