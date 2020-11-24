@@ -524,6 +524,10 @@ Corinne Riddell
 </ul>
 <p>After each change, notice how the <span class="math inline">\(F\)</span> statistic changes. A higher <span class="math inline">\(F\)</span> implies that there is much more variation between vs. within the groups. Notice also how the p-value for the test changes.</p>
 </div>
+<div id="test-your-understanding" class="slide section level3">
+<h1>Test your understanding</h1>
+<p>www.yellkey.com/trouble</p>
+</div>
 <div id="the-analysis-of-variance-anova" class="slide section level3">
 <h1>The Analysis of Variance (ANOVA)</h1>
 <ul>
@@ -598,7 +602,7 @@ Corinne Riddell
 </div>
 <div id="example-cannabis-to-treat-brain-cancer-in-mice" class="slide section level3">
 <h1>Example: Cannabis to treat brain cancer in mice</h1>
-<p>High-grade glioma is an aggressive type of brain cancer with a low long-term survival rate. Cannabinoids, a chemical compounds found in cannabis, are thought to inhibit glioma cell growth. Researchers transplanted glioma cells into otherwise-healthy mice, and then randomly assigned these mice to 4 cancer treatments: irradiation alone, cannabinoids alone, irradiation combined with cannabinoids, or no treatment. The treatments were administered for 21 days, after which the glioma tumor volume (in cubic millimeters) was assessed in each mouse using brain imaging.</p>
+<p>High-grade glioma is an aggressive type of brain cancer with a low long-term survival rate. Cannabinoids, chemical compounds found in cannabis, are thought to inhibit glioma cell growth. Researchers transplanted glioma cells into otherwise-healthy mice, and then randomly assigned these mice to 4 cancer treatments: irradiation alone, cannabinoids alone, irradiation combined with cannabinoids, or no treatment. The treatments were administered for 21 days, after which the glioma tumor volume (in cubic millimeters) was assessed in each mouse using brain imaging.</p>
 </div>
 <div id="the-data" class="slide section level3">
 <h1>The data</h1>
@@ -676,7 +680,7 @@ Corinne Riddell
 <p><span class="math display">\[F=\frac{\text{variation among group means}}{\text{variation among individuals in the same group}}\]</span></p>
 <ul>
 <li>Numerator is, fundamentally, the variance of the sample means</li>
-<li>Denominator is, fundamentally, an average of the group variances.</li>
+<li>Denominator is, fundamentally, an average of the group variances</li>
 <li>The <span class="math inline">\(F\)</span> statistic follows an <span class="math inline">\(F\)</span> distribution</li>
 </ul>
 </div>
@@ -715,7 +719,7 @@ Corinne Riddell
 <p><span class="math display">\[F=\frac{\text{variation among group means}}{\text{variation among individuals in the same group}}\]</span></p>
 <p><span class="math display">\[F=\frac{\text{MSG}}{\text{MSE}}\]</span></p>
 <ul>
-<li>We are comparing the variation across the groups to the variation among indivduals in the same group</li>
+<li>We are comparing the variation across the groups to the variation among individuals in the same group</li>
 <li>If the F statistic is high, then there is relatively more variation across groups than there is within groups.</li>
 <li>If the F statistic is less than 1, then there is more variation across individuals in the same group, then there is between group means.</li>
 <li>Go back to the applet and move things around. See how the F-statistic changes. When is the F-stat very high vs.  when is it &lt;1?</li>
@@ -766,6 +770,10 @@ Corinne Riddell
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">pf</span>(<span class="fl">6.699489</span>, <span class="dt">df1 =</span> <span class="dv">4</span> <span class="op">-</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">df2 =</span> <span class="dv">22</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span>, <span class="dt">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.003131703</code></pre>
 <p>The p-value equals 0.3%. Under the null hypothesis of no difference between the group means, there is a 0.3% change of observing the F-statistic that we calculated. This is a very small probability, and provides evidence against the null in favor of the alternative hypothesis that at least one mean is different from the others.</p>
+</div>
+<div id="check-your-understanding" class="slide section level3">
+<h1>Check your understanding</h1>
+<p>www.yellkey.com/growth</p>
 </div>
 <div id="next-steps" class="slide section level3">
 <h1>Next steps</h1>
