@@ -2,7 +2,7 @@
 title: "Chapter 24: Comparing several continuous means (ANOVA)"
 author: "Corinne Riddell"
 date: "November 20 and 23, 2020"
-output: word_document
+output: slidy_presentation
 ---
 
 ### Learning objective for today
@@ -164,6 +164,10 @@ After each change, notice how the $F$ statistic changes. A higher $F$ implies
 that there is much more variation between vs. within the groups. Notice also how 
 the p-value for the test changes.
 
+### Test your understanding
+
+www.yellkey.com/trouble
+
 ### The Analysis of Variance (ANOVA)
 
 - ANOVA is used to compare the means of more than two groups when the comparison variable is 
@@ -247,7 +251,7 @@ others.
 ### Example: Cannabis to treat brain cancer in mice
 
 High-grade glioma is an aggressive type of brain cancer with a low long-term
-survival rate. Cannabinoids, a chemical compounds found in cannabis, are
+survival rate. Cannabinoids, chemical compounds found in cannabis, are
 thought to inhibit glioma cell growth. Researchers transplanted glioma cells into 
 otherwise-healthy mice, and then randomly assigned these mice to 4 cancer 
 treatments: irradiation alone, cannabinoids alone, irradiation combined with 
@@ -313,7 +317,7 @@ ggplot(cancer_data, aes(x = trt_order, y = tumor_volume)) +
 $$F=\frac{\text{variation among group means}}{\text{variation among individuals in the same group}}$$
 
 - Numerator is, fundamentally, the variance of the sample means
-- Denominator is, fundamentally, an average of the group variances.
+- Denominator is, fundamentally, an average of the group variances
 - The $F$ statistic follows an $F$ distribution
 
 ### The test statistic (a.k.a. the ANOVA F Statistic)
@@ -359,7 +363,7 @@ $$F=\frac{\text{variation among group means}}{\text{variation among individuals 
 
 $$F=\frac{\text{MSG}}{\text{MSE}}$$
 
-* We are comparing the variation across the groups to the variation among indivduals in the same group
+* We are comparing the variation across the groups to the variation among individuals in the same group
 * If the F statistic is high, then there is relatively more variation across groups than there is within groups. 
 * If the F statistic is less than 1, then there is more variation across individuals in the same group, then there is
 between group means.
@@ -420,6 +424,10 @@ group means, there is a 0.3% change of observing the F-statistic that we calcula
 This is a very small probability, and provides evidence against the null in favor
 of the alternative hypothesis that at least one mean is different from the others.
 
+### Check your understanding
+
+www.yellkey.com/growth
+ 
 ### Next steps
 
 - The interpretation of the p-value leaves something to be desired: **What** 
